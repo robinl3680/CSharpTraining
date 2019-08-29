@@ -1,0 +1,9 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Alchemy.DESKTOP-V8A10HM\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Alchemy.DESKTOP-V8A10HM\\.nuget\\packages",
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+    ]
+  }
+}

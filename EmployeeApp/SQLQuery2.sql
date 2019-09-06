@@ -1,0 +1,1 @@
+﻿alter table employee add foreign key (departmentid) references department (departmentid);

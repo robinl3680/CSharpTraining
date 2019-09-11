@@ -36,6 +36,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dept_combo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // name_txt
@@ -88,7 +90,6 @@
             // 
             // dept_combo
             // 
-            this.dept_combo.Enabled = false;
             this.dept_combo.FormattingEnabled = true;
             this.dept_combo.Location = new System.Drawing.Point(154, 209);
             this.dept_combo.Name = "dept_combo";
@@ -105,11 +106,32 @@
             this.label4.Text = "Department";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(154, 253);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Update";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(253, 253);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Cancel";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // Update
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 450);
+            this.ClientSize = new System.Drawing.Size(526, 450);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dept_combo);
             this.Controls.Add(this.label3);
@@ -119,6 +141,7 @@
             this.Controls.Add(this.salary_txt);
             this.Controls.Add(this.name_txt);
             this.Name = "Update";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update";
             this.Load += new System.EventHandler(this.Update_Load);
             this.ResumeLayout(false);
@@ -136,5 +159,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox dept_combo;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

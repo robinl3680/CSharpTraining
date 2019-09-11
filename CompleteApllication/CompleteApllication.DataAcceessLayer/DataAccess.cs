@@ -138,6 +138,73 @@ namespace CompleteApllication.DataAcceessLayer
             }
             return deleted;
         }
+        public bool InsertEmployee(int id, string name, decimal salary, string location, int deptid)
+        {
+            bool isInserted = false;
+            if(connection != null)
+            {
+                procedureName = GetProcedureName("INSERT_QUERY");
+                if(procedureName != null)
+                {
+                    command = CreateCommand(connection, procedureName);
+                    if(command != null)
+                    {
+                        SqlParameter empid = CreateParameter("@empid", id, SqlDbType.Int);
+                        SqlParameter empname = CreateParameter("@empname", name, SqlDbType.VarChar);
+                        SqlParameter empsalary = CreateParameter("@empsalary", salary, SqlDbType.Decimal);
+                        SqlParameter emplocation = CreateParameter("@emplocation", location, SqlDbType.VarChar);
+                        SqlParameter dep = CreateParameter("@deptid", deptid, SqlDbType.Int);
+                        command.Parameters.Add(empid);
+                        command.Parameters.Add(empname);
+                        command.Parameters.Add(empsalary);
+                        command.Parameters.Add(emplocation);
+                        command.Parameters.Add(dep);
+                        OpenConnection(connection);
+                        if(connection.State == ConnectionState.Open)
+                        {
+                            int result = command.ExecuteNonQuery();
+                            if (result > 0)
+                                isInserted = true;
+                        }
+            
+
+                    }
+                }
+            }
+            return isInserted;
+        }
+        public bool Updateemployee(int id,string name, string location, decimal salary, int deptid)
+        {
+            bool isUpdated = false;
+            if(connection != null)
+            {
+                procedureName = GetProcedureName("UPDATE_EMPLOYEE");
+                if(procedureName != null)
+                {
+                    command = CreateCommand(connection, procedureName);
+                    if(command != null)
+                    {
+                        SqlParameter empid = CreateParameter("@empid", id, SqlDbType.Int);
+                        SqlParameter empname = CreateParameter("@empname", name, SqlDbType.VarChar);
+                        SqlParameter emplocation = CreateParameter("@emplocation", location, SqlDbType.VarChar);
+                        SqlParameter empsalary = CreateParameter("@empsalary", salary, SqlDbType.Decimal);
+                        SqlParameter dept = CreateParameter("@deptid", deptid, SqlDbType.Int);
+                        command.Parameters.Add(empid);
+                        command.Parameters.Add(empname);
+                        command.Parameters.Add(emplocation);
+                        command.Parameters.Add(empsalary);
+                        command.Parameters.Add(dept);
+                        OpenConnection(connection);
+                        int res = command.ExecuteNonQuery();
+                        if (res > 0)
+                            isUpdated = true;
+                    }
+
+                }
+               
+            }
+            return isUpdated;
+        }
         
         
     }

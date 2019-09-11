@@ -90,17 +90,21 @@ namespace UserInterface
                 }
                 else if(cellContent == "Update")
                 {
-                    Form.ActiveForm.Hide();
-                    Update up = new Update();
+                    this.Hide();
+                    int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["Id"].Value);
+                    string name = (string)(dataGridView1.CurrentRow.Cells["Name"].Value);
+                    decimal salary = (decimal)(dataGridView1.CurrentRow.Cells["Salary"].Value);
+                    string location = (string)(dataGridView1.CurrentRow.Cells["Location"].Value);
+
+
+                    Update up = new Update(id,name,salary,location);
+                    up.MdiParent = ParentForm;
                     up.Show();
                 }
 
 
             }
-            else
-            {
-                textBox1.Clear();
-            }
+           
 
                 
         }
